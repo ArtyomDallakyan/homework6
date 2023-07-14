@@ -51,3 +51,67 @@ find_factorial(5)
         print()
         i += 1
   print_pattern(6) 
+
+
+# Write a Python function called find_common_elements that takes two lists as input and returns a new list containing the common elements between the two input lists. Use a for loop and an if statement to check for common elements.
+
+  def find_common_elements(list1, list2):
+    common_elements = []
+    for element in list1:
+        if element in list2:
+            common_elements.append(element)
+    return common_elements
+    
+  print(find_common_elements([1,2,3,4], [1,2,5,6])) 
+
+
+
+# Implement a Python function called find_prime_factors that takes a positive integer as input and returns a list of its prime factors. Use a while loop and an if statement to find and add prime factors to the list.
+
+  def find_prime_factors(number):
+    prime_factors = []
+    div = 2
+
+    while div <= number:
+        if number % div == 0:
+            prime_factors.append(div)
+            number = number / div
+        else:
+            div += 1
+    return prime_factors  
+    
+  print(find_prime_factors(56))   
+
+
+
+# Create a Python program that simulates a basic calculator. It should repeatedly ask the user for two numbers and an operator (+, -, *, /) and perform the corresponding operation using if/elif statements. Use a while loop to allow the user to perform multiple calculations until they choose to exit.
+
+  def calculator():
+    while True:
+        num1 = float(input("Enter the first number: "))
+        operator = input("Enter the operator (+, -, *, /): ")
+        num2 = float(input("Enter the second number: "))
+
+        if operator == '+':
+            result = num1 + num2
+        elif operator == '-':
+            result = num1 - num2
+        elif operator == '*':
+            result = num1 * num2
+        elif operator == '/':
+            result = num1 / num2
+        else:
+            print("Invalid operator!")
+            continue
+
+        print("Result:", result)
+
+        choice = input("Do you want to perform another calculation? (yes/no): ")
+        if choice.lower() != 'yes':
+            break
+
+  calculator() 
+
+
+
+
